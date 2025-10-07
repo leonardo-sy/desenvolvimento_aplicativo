@@ -1,0 +1,28 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package pkg01atividade;
+
+/**
+ *
+ * @author Aluno
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic herez
+         int A = 25;
+        int B = A * 3;
+        int C = 10;
+        double D = (double) A / C; 
+        System.out.println("O valor de A é: " + A);
+        System.out.println("O valor de B é: " + B);
+        System.out.println("O valor de C é: " + C);
+        System.out.println("O valor de D é: " + D);
+    }
+    
+}
