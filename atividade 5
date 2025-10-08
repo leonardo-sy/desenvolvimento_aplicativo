@@ -1,0 +1,162 @@
+package atv005;
+
+/**
+ *
+ * @author Aluno
+ */
+public class Atv005 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    // Questão 1
+    System.out.print("Digite um número N: ");
+    int n = sc.nextInt();
+    int i = 1;
+    while (i <= n) {
+        System.out.println(i);
+        i++;
+    }
+
+    // Questão 2
+    int numero, soma = 0, contador = 0;
+    System.out.println("Digite números inteiros (digite -1 para sair): ");
+    numero = sc.nextInt();
+    while (numero != -1) {
+        soma += numero;
+        contador++;
+        numero = sc.nextInt();
+    }
+    System.out.println("Soma dos números: " + soma);
+    System.out.println("Quantidade de números digitados: " + contador);
+
+    // Questão 3
+    sc.nextLine(); 
+    String senha = "";
+    while (!senha.equals("Java123")) {
+        System.out.print("Digite a senha: ");
+        senha = sc.nextLine();
+        if (!senha.equals("Java123")) {
+            System.out.println("Senha incorreta!");
+        }
+    }
+    System.out.println("Acesso permitido!");
+
+    // Questão 4
+    int opcao = -1;
+    while (opcao != 0) {
+        System.out.println("Menu: 1-Somar | 2-Subtrair | 3-Multiplicar | 0-Sair");
+        System.out.print("Escolha: ");
+        opcao = sc.nextInt();
+
+        if (opcao == 0) break;
+
+        System.out.print("Digite o primeiro número: ");
+        double n1 = sc.nextDouble();
+        System.out.print("Digite o segundo número: ");
+        double n2 = sc.nextDouble();
+
+        if (opcao == 1) System.out.println("Resultado: " + (n1 + n2));
+        else if (opcao == 2) System.out.println("Resultado: " + (n1 - n2));
+        else if (opcao == 3) System.out.println("Resultado: " + (n1 * n2));
+        else System.out.println("Opção inválida!");
+    }
+
+    // Questão 5
+    System.out.print("Digite um número para calcular o fatorial: ");
+    int f = sc.nextInt();
+    int fat = 1;
+    int j = 1;
+    while (j <= f) {
+        fat *= j;
+        j++;
+    }
+    System.out.println("Fatorial de " + f + " é: " + fat);
+
+    // Questão 6
+    System.out.print("Digite um número limite N: ");
+    int limite = sc.nextInt();
+    int a = 0, b = 1;
+    System.out.print("Sequência de Fibonacci: ");
+    System.out.print(a + " " + b);
+    int prox = a + b;
+    while (prox <= limite) {
+        System.out.print(" " + prox);
+        a = b;
+        b = prox;
+        prox = a + b;
+    }
+    System.out.println();
+
+    // Questão 7
+    System.out.print("Digite um número para verificar se é primo: ");
+    int num = sc.nextInt();
+    if (num < 2) {
+        System.out.println("Não é primo.");
+    } else {
+        int divisor = 2;
+        boolean primo = true;
+        while (divisor * divisor <= num) {
+            if (num % divisor == 0) {
+                primo = false;
+                break;
+            }
+            divisor++;
+        }
+        if (primo) System.out.println("É primo.");
+        else System.out.println("Não é primo.");
+    }
+
+    // Questão 8
+    int valor, somaPositivos = 0;
+    System.out.println("Digite números (número negativo encerra):");
+    while (true) {
+        valor = sc.nextInt();
+        if (valor < 0) break;
+        somaPositivos += valor;
+    }
+    System.out.println("Soma dos números digitados: " + somaPositivos);
+
+    // Questão 9
+    System.out.print("Digite um número inteiro: ");
+    int n9 = sc.nextInt();
+    int numAbsoluto = Math.abs(n9);
+    int digitos = 0, somaDigitos = 0, reverso = 0;
+    int temp = numAbsoluto;
+    while (temp > 0) {
+        int digito = temp % 10;
+        somaDigitos += digito;
+        reverso = reverso * 10 + digito;
+        temp /= 10;
+        digitos++;
+    }
+    System.out.println("Número de dígitos: " + digitos);
+    System.out.println("Soma dos dígitos: " + somaDigitos);
+    System.out.println("Número reverso: " + reverso);
+
+    // Questão 10
+    System.out.print("Digite um número para gerar a sequência de Collatz: ");
+    int n10 = sc.nextInt();
+    System.out.print("Sequência: " + n10);
+    while (n10 != 1) {
+        if (n10 % 2 == 0) {
+            n10 = n10 / 2;
+        } else {
+            n10 = 3 * n10 + 1;
+        }
+        System.out.print(" -> " + n10);
+    }
+    System.out.println("\nFim da sequência.");
+
+    sc.close();
+}
+```
+
+}
+
+    }
+    
+}
