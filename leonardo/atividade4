@@ -1,0 +1,204 @@
+package atividade0004a;
+
+/**
+ *
+ * @author Aluno
+ */
+public class Atividade0004a {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+ 
+    Scanner sc = new Scanner(System.in);
+
+ 
+    // Questão 1
+   
+    System.out.println("=== Questão 1 ===");
+    System.out.print("Digite um número: ");
+    double num1 = sc.nextDouble();
+    if (num1 < 0) {
+        System.out.println("Você digitou um número negativo.");
+    } else {
+        System.out.println("Você digitou um número positivo.");
+    }
+
+
+    // Questão 2
+
+    System.out.println("\n=== Questão 2 ===");
+    System.out.print("Digite um número: ");
+    double num2 = sc.nextDouble();
+    if (num2 < 0) {
+        System.out.println("Você digitou um número negativo.");
+    } else if (num2 > 0) {
+        System.out.println("Você digitou um número positivo.");
+    } else {
+        System.out.println("Você digitou zero.");
+    }
+
+
+    // Questão 3
+
+    System.out.println("\n=== Questão 3 ===");
+    System.out.print("Digite a primeira nota: ");
+    double n1 = sc.nextDouble();
+    System.out.print("Digite a segunda nota: ");
+    double n2 = sc.nextDouble();
+    System.out.print("Digite a terceira nota: ");
+    double n3 = sc.nextDouble();
+    double media = (n1 + n2 + n3) / 3;
+    if (media >= 7) {
+        System.out.println("ALUNO APROVADO");
+    } else {
+        System.out.println("ALUNO REPROVADO");
+    }
+
+    // Questão 4
+
+    System.out.println("\n=== Questão 4 ===");
+    System.out.print("Digite a primeira nota: ");
+    double n4 = sc.nextDouble();
+    System.out.print("Digite a segunda nota: ");
+    double n5 = sc.nextDouble();
+    System.out.print("Digite a terceira nota: ");
+    double n6 = sc.nextDouble();
+    double media2 = (n4 + n5 + n6) / 3;
+    if (media2 >= 7) {
+        System.out.println("ALUNO APROVADO");
+    } else if (media2 >= 5) {
+        System.out.println("ALUNO EM RECUPERAÇÃO");
+    } else {
+        System.out.println("ALUNO REPROVADO");
+    }
+
+  
+    // Questão 5
+
+    System.out.println("\n=== Questão 5 ===");
+    System.out.print("Digite um número: ");
+    int num5 = sc.nextInt();
+    if (num5 % 2 == 0) {
+        System.out.println("O número é par.");
+    } else {
+        System.out.println("O número é ímpar.");
+    }
+
+
+    // Questão 6
+
+    System.out.println("\n=== Questão 6 ===");
+    System.out.print("Digite o primeiro número: ");
+    double a = sc.nextDouble();
+    System.out.print("Digite o segundo número: ");
+    double b = sc.nextDouble();
+    System.out.print("Digite o terceiro número: ");
+    double c = sc.nextDouble();
+    double maior = a;
+    if (b > maior) maior = b;
+    if (c > maior) maior = c;
+    System.out.println("O maior número é: " + maior);
+
+    // Questão 7
+
+    System.out.println("\n=== Questão 7 ===");
+    System.out.print("Digite a idade do nadador: ");
+    int idade = sc.nextInt();
+    if (idade >= 18) {
+        System.out.println("Categoria: Adulto");
+    } else if (idade >= 14) {
+        System.out.println("Categoria: Juvenil");
+    } else if (idade >= 9) {
+        System.out.println("Categoria: Infantil");
+    } else {
+        System.out.println("Categoria: Mirim");
+    }
+
+  
+    // Questão 8
+
+    System.out.println("\n=== Questão 8 ===");
+    System.out.print("Digite o primeiro número: ");
+    int q8n1 = sc.nextInt();
+    System.out.print("Digite o segundo número: ");
+    int q8n2 = sc.nextInt();
+    int soma = q8n1 + q8n2;
+    if (soma > 20) {
+        soma += 8;
+    } else {
+        soma -= 5;
+    }
+    System.out.println("Resultado: " + soma);
+
+    // Questão 9
+
+    System.out.println("\n=== Questão 9 ===");
+    System.out.print("Digite o valor de compra do produto: ");
+    double valorCompra = sc.nextDouble();
+    double valorVenda;
+    if (valorCompra < 20.0) {
+        valorVenda = valorCompra * 1.45;
+    } else {
+        valorVenda = valorCompra * 1.30;
+    }
+    System.out.printf("Valor de venda: R$ %.2f%n", valorVenda);
+
+
+    // Questão 10
+
+    System.out.println("\n=== Questão 10 ===");
+    System.out.print("Digite a quantidade de maçãs compradas: ");
+    int qtd = sc.nextInt();
+    double preco;
+    if (qtd < 12) {
+        preco = qtd * 0.30;
+    } else {
+        preco = qtd * 0.25;
+    }
+    System.out.printf("Valor total da compra: R$ %.2f%n", preco);
+
+   
+    // Questão 11
+  
+    System.out.println("\n=== Questão 11 ===");
+    System.out.print("Digite sua altura (em metros): ");
+    double altura = sc.nextDouble();
+    System.out.print("Digite seu sexo (1 - feminino, 2 - masculino): ");
+    int sexo = sc.nextInt();
+    double pesoIdeal;
+    if (sexo == 1) {
+        pesoIdeal = (62.1 * altura) - 44.7;
+    } else if (sexo == 2) {
+        pesoIdeal = (72.7 * altura) - 58;
+    } else {
+        System.out.println("Código inválido!");
+        sc.close();
+        return;
+    }
+    System.out.printf("Seu peso ideal é: %.2f kg%n", pesoIdeal);
+
+ 
+    // Questão 12
+
+    System.out.println("\n=== Questão 12 ===");
+    System.out.print("Digite um número de 1 a 7 para o dia da semana: ");
+    int dia = sc.nextInt();
+    switch (dia) {
+        case 1 -> System.out.println("Domingo - Final de semana");
+        case 2, 3, 4, 5, 6 -> System.out.println("Dia útil");
+        case 7 -> System.out.println("Sábado - Final de semana");
+        default -> System.out.println("Dia inválido.");
+    }
+
+    sc.close();
+}
+```
+
+}
+
+    }
+    
+}
