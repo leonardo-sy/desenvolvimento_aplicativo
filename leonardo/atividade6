@@ -1,0 +1,168 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package atividade06;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Aluno
+ */
+public class Atividade06 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         Scanner entrada = new Scanner(System.in);
+           double nota;
+        do {
+            System.out.print("Digite uma nota (0 a 10): ");
+            nota = entrada.nextDouble();
+            if (nota < 0 || nota > 10) {
+                System.out.println("Valor inválido! Tente novamente.");
+            }
+        } while (nota < 0 || nota > 10);
+        System.out.println("Nota válida: " + nota);
+        System.out.println("-----------------------------------------");
+
+        
+        // Questão 2 
+        
+        int num, soma = 0, qtd = 0;
+        do {
+            System.out.print("Digite um número (0 encerra): ");
+            num = entrada.nextInt();
+            if (num != 0) {
+                soma += num;
+                qtd++;
+            }
+        } while (num != 0);
+
+        if (qtd > 0) {
+            double media = (double) soma / qtd;
+            System.out.println("Soma: " + soma + " | Quantidade: " + qtd + " | Média: " + media);
+        } else {
+            System.out.println("Nenhum número válido digitado.");
+        }
+        System.out.println("-----------------------------------------");
+
+        
+        // Questão 3 
+       
+        int segredo = (int) (Math.random() * 100) + 1;
+        int palpite, tentativas = 0;
+        do {
+            System.out.print("Palpite (1 a 100): ");
+            palpite = entrada.nextInt();
+            tentativas++;
+            if (palpite > segredo) {
+                System.out.println("Muito alto!");
+            } else if (palpite < segredo) {
+                System.out.println("Muito baixo!");
+            } else {
+                System.out.println("Acertou em " + tentativas + " tentativas!");
+            }
+        } while (palpite != segredo);
+        System.out.println("-----------------------------------------");
+
+       
+        // Questão 4 
+       
+        char repetir;
+        do {
+            int n;
+            do {
+                System.out.print("Digite N (>0): ");
+                n = entrada.nextInt();
+                if (n <= 0) System.out.println("Valor inválido. Tente novamente.");
+            } while (n <= 0);
+
+            for (int i = n; i >= 0; i--) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+
+            System.out.print("Repetir? (s/n): ");
+            repetir = entrada.next().charAt(0);
+        } while (repetir == 's' || repetir == 'S');
+        System.out.println("-----------------------------------------");
+
+        
+        // Questão 5 
+        
+        final String SENHA_CORRETA = "senai123";
+        int tent = 3;
+        String senha;
+        do {
+            System.out.print("Senha: ");
+            senha = entrada.next();
+            tent--;
+            if (senha.equals(SENHA_CORRETA)) {
+                System.out.println("Acesso concedido.");
+                break;
+            } else if (tent > 0) {
+                System.out.println("Incorreta. Tentativas restantes: " + tent);
+            } else {
+                System.out.println("Conta bloqueada.");
+            }
+        } while (!senha.equals(SENHA_CORRETA) && tent > 0);
+        System.out.println("-----------------------------------------");
+
+        
+        // Questão 6
+        
+        System.out.print("Digite um número para a tabuada: ");
+        int nTab = entrada.nextInt();
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(nTab + " x " + i + " = " + (nTab * i));
+        }
+        System.out.println("----------------------");
+
+        
+        // Questão 7
+        
+        int nSoma;
+        do {
+            System.out.print("Digite N (>0): ");
+            nSoma = entrada.nextInt();
+            if (nSoma <= 0) System.out.println("Valor inválido!");
+        } while (nSoma <= 0);
+
+        int somaPares = 0, somaImpares = 0;
+        for (int i = 1; i <= nSoma; i++) {
+            if (i % 2 == 0) somaPares += i;
+            else somaImpares += i;
+        }
+        System.out.println("Soma dos pares: " + somaPares);
+        System.out.println("Soma dos ímpares: " + somaImpares);
+        System.out.println("-----------------------------------------");
+
+        
+        // Questão 8 
+        
+        int nPrimo;
+        do {
+            System.out.print("Digite N (>1): ");
+            nPrimo = entrada.nextInt();
+            if (nPrimo <= 1) System.out.println("Valor inválido!");
+        } while (nPrimo <= 1);
+
+        System.out.println("Números primos até " + nPrimo + ":");
+        for (int k = 2; k <= nPrimo; k++) {
+            boolean primo = true;
+            for (int i = 2; i <= Math.sqrt(k); i++) {
+                if (k % i == 0) {
+                    primo = false;
+                    break;
+                }
+            }
+            if (primo) System.out.print(k + " ");
+        }
+        System.out.println("\n---------");
+
+        entrada.close();
+    }
+    
+}
